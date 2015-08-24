@@ -2,7 +2,7 @@ Installation
 ============
 
 
-0. Add dependencies at transport_deps.php
+1. Add dependencies at transport_deps.php
 -----------------------------------------
 ```php
 ->register('transport.disk')
@@ -10,7 +10,7 @@ Installation
 ->withDependencies(['transport.eventdispatcher'])
 ```
 
-0. Edit necessary path for saved messages
+2. Edit necessary path for saved messages
 -----------------------------------------
 
 At Swift_DiskTransport::__construct() method.
@@ -18,7 +18,7 @@ At Swift_DiskTransport::__construct() method.
 $this->setPath('...');
 ```
 
-0. Feel free to create saved message as you want
+3. Feel free to create saved message as you want
 ------------------------------------------------
 
 At Swift_Transport_DiskTransport::send() method.
