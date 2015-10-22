@@ -67,7 +67,7 @@ class Swift_Transport_DiskTransport implements Swift_Transport
     // now starts the saving part
     $fp = fopen($this->_path . $fileName, 'w');
     if($fp === false)
-      throw new Swift_TransportException('Could not open file handle');
+      throw new Swift_TransportException('Could not open file handle' . (error_get_last() ? ': ' . error_get_last()['message']: '!'));
 
     foreach($message->getTo() as $email => $name)
     {
